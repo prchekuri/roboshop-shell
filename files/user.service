@@ -1,10 +1,10 @@
 [Unit]
-Description = Catalogue Service
-
+Description = User Service
 [Service]
 User=roboshop
 Environment=MONGO=true
-Environment=MONGO_URL="mongodb://mongodb.roboshop.internal:27017/catalogue"
+Environment=REDIS_HOST=redis.roboshop.internal
+Environment=MONGO_URL="mongodb://mongodb.roboshop.internal:27017/users"
 ExecStart=/bin/node /app/server.js
 SyslogIdentifier=user
 

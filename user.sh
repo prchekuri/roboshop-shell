@@ -3,4 +3,4 @@ log1=/tmp/catalogue.log
 
 component=user
 
-#NODEJS
+NODEJS

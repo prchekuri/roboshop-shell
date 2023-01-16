@@ -1,3 +1,4 @@
+#import common.sh file
 source common.sh
 
 print_head "Install Nginx"

@@ -1,5 +1,5 @@
 script_location=$(pwd)
-#set -e (to stop the script where it fails)
+#set -e (to stop the script where it gets errors)
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 
 yum install nodejs -y
@@ -24,4 +24,4 @@ systemctl start catalogue
 cp ${script_location}/files/mongodb.repo /etc/yum.repos.d/mongodb.repo
 yum install mongodb-org-shell -y
 
-mongo --host localhost </app/schema/catalogue.js
+mongo --host mongodb.roboshop.internal </app/schema/catalogue.js

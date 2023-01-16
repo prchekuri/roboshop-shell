@@ -12,7 +12,7 @@ status_check
 
 echo -e "\e[35m Add Application User\e[0m"
 useradd roboshop &>>${LOG}
-status_check log1
+status_check $log1
 
 mkdir -p /app &>>${LOG}
 

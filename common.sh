@@ -1,7 +1,6 @@
 script_location=$(pwd)
 LOG=/tmp/roboshop.log
-echo "log from catalogue - " ${log1}
-echo component is  ${component}
+
 status_check(){
   if [ $? -eq 0 ]
     then
@@ -9,7 +8,6 @@ status_check(){
     else
       echo -e "\e[1;31m FAILURE\e[0m"
       echo "Refer log file for more information, Log - ${LOG}"
-#     echo "log from catalogue - $1"
       exit
   fi
 }
@@ -19,10 +17,6 @@ print_head(){
 }
 
 NODEJS(){
-
-  echo "log from catalogue - " ${log1}
-  echo component is  ${component}
-
   print_head "Configuring NodeJS repos"
   #set -e (to stop the script where it gets errors)
   curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>${LOG}

@@ -1,7 +1,7 @@
 source common.sh
 #log1=/tmp/catalogue.log
 
-echo -e "\e[35m Configuring NodeJS repos\e[0m"
+print_head "Configuring NodeJS repos"
 #set -e (to stop the script where it gets errors)
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>${LOG}
 status_check

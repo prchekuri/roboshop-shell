@@ -8,7 +8,7 @@ status_check(){
     else
       echo -e "\e[1;31m FAILURE\e[0m"
       echo "Refer log file for more information, Log - ${LOG}"
-      echo "log from catalogue - $1"
+#     echo "log from catalogue - $1"
       exit
   fi
 }

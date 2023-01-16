@@ -19,6 +19,10 @@ print_head(){
 }
 
 NODEJS(){
+
+  echo "log from catalogue - " ${log1}
+  echo component is  ${component}
+
   print_head "Configuring NodeJS repos"
   #set -e (to stop the script where it gets errors)
   curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>${LOG}

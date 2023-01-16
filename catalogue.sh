@@ -6,7 +6,7 @@ status_check(){
     then
       echo SUCCESS
     else
-      echo FAILURE
+      echo "\e[35m FAILURE\e[0m"
       exit
   fi
 }

@@ -1,7 +1,7 @@
 script_location=$(pwd)
 LOG=/tmp/roboshop.log
 echo "log from catalogue - " ${log1}
-echo "component is " ${component}
+echo component is  ${component}
 status_check(){
   if [ $? -eq 0 ]
     then

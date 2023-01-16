@@ -1,15 +1,5 @@
-script_location=$(pwd)
+source common.sh
 LOG=/tmp/catalogue.log
-
-status_check(){
-  if [ $? -eq 0 ]
-    then
-      echo -e "\e[32m SUCCESS\e[0m"
-    else
-      echo -e "\e[31m FAILURE\e[0m"
-      exit
-  fi
-}
 
 echo -e "\e[35m Configuring NodeJS repos\e[0m"
 #set -e (to stop the script where it gets errors)

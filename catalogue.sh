@@ -1,4 +1,5 @@
 source common.sh
+log1=/tmp/catalogue.log
 
 echo -e "\e[35m Configuring NodeJS repos\e[0m"
 #set -e (to stop the script where it gets errors)
@@ -11,7 +12,7 @@ status_check
 
 echo -e "\e[35m Add Application User\e[0m"
 useradd roboshop &>>${LOG}
-status_check
+status_check log1
 
 mkdir -p /app &>>${LOG}
 

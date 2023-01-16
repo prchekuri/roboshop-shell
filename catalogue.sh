@@ -1,5 +1,4 @@
 source common.sh
-LOG=/tmp/catalogue.log
 
 echo -e "\e[35m Configuring NodeJS repos\e[0m"
 #set -e (to stop the script where it gets errors)

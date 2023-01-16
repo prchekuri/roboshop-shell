@@ -79,7 +79,10 @@ NODEJS(){
   yum install mongodb-org-shell -y &>>${LOG}
   status_check
 
-  print_head "Load Schema"
-  mongo --host mongodb.roboshop.internal </app/schema/${component}.js &>>${LOG}
-  status_check
+  if [ ${schema_load} == "true" ]
+    then
+      print_head "Load Schema"
+      mongo --host mongodb.roboshop.internal </app/schema/${component}.js &>>${LOG}
+      status_check
+  fi
 }

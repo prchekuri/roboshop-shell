@@ -7,7 +7,13 @@ echo $?
 
 echo -e "\e[35m Remove old Nginx content\e[0m"
 rm -rf /usr/share/nginx/html/* &>>${LOG}
-echo $?
+if [ $? -eq 0 ]
+  then
+    echo "SUCCESS"
+  else
+    echo FAILED
+fi
+
 
 echo -e "\e[35m Download Frontend Content\e[0m"
 curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.zip &>>${LOG}

@@ -155,3 +155,29 @@ PYTHON(){
 
   LOAD_SCHEMA
 }
+
+GOLANG(){
+  print_head "Install GoLang"
+  yum install golang -y  &>>${LOG}
+  status_check
+
+  APP_PREREQ
+
+  print_head "Download Dependencies & install dependencies"
+  cd /app
+  go mod init dispatch  &>>${LOG}
+  go get  &>>${LOG}
+  status_check
+
+  print_head "Build the Software"
+  go build  &>>${LOG}
+  status_check
+
+  print_head "Update Passwords in ${component} Service File"
+  sed -i -e "s/roboshop_rabbitmq_password/${roboshop_rabbitmq_password}/" ${script_location}/files/${component}.service  &>>${LOG}
+  status_check
+
+  SYSTEMD_SETUP
+
+  LOAD_SCHEMA
+}
